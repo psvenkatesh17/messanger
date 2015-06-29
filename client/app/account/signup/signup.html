@@ -1,0 +1,57 @@
+   <div class="container w-xxl w-auto-lg" ng-controller="SignupCtrl" style="background-color:#001122">
+      <a href class="navbar-brand block m-t" style="color:#ffffff"><h2>{{app.name}}</h2></a>
+      <div class="m-b-lg" ng-init="initSignup()">
+        <div class="wrapper text-center">
+          <strong>Sign up to find interesting thing</strong>
+        </div>
+        <form name="form" class="form-validation">
+          <!-- <div class="text-danger wrapper text-center" ng-show="authError">
+              {{authError}}
+          </div> -->
+          <div class="list-group list-group-sm">
+            <div class="list-group-item">
+              <input placeholder="Username" class="form-control no-border" ng-model="user.username" required>
+            </div>
+            <div class="list-group-item">
+              <input type="email" placeholder="Email" class="form-control no-border" ng-model="user.email" required>
+            </div>
+            <div class="list-group-item">
+               <input type="password" name="password" placeholder="Password" class="form-control no-border" ng-model="user.password" required>
+            </div>
+            <div class="list-group-item">
+               <input type="password" name="confirm_password" placeholder="Confirm Password" class="form-control no-border" ng-model="user.confirm_password" required>
+            </div>
+            <div class="list-group-item">              
+              <input type="text" id="from_date" name="dob" class="form-control no-border" 
+              datepicker-popup="yyyy-MM-dd" ng-model="user.dob" placeholder="DOB"
+              is-open="fromOpen" datepicker-options="dateOptions"
+              ng-required="true" close-text="Close" ng-click="fromOpen = true"/>         
+            </div>
+            <div class="list-group-item">&nbsp&nbsp&nbsp&nbsp              
+                <input type="radio" name="gender" id="gender-m" value="MALE">
+                <label for="gender-m">Male</label>&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="radio" name="gender" id="gender-f" value="FEMALE">
+                <label for="gender-f">Female</label>
+            </div>
+            <div class="list-group-item">
+              <input placeholder="Mobile" class="form-control no-border" ng-model="user.mobile" required>
+            </div>            
+            <div class="list-group-item">
+              <textarea rows="4" cols="50" placeholder="Address" class="form-control no-border" ng-model="user.address" required/>
+            </div>
+            <div class="list-group-item">
+              <input type="Number" placeholder="Pincode" class="form-control no-border" ng-model="user.pincode" required>
+            </div>
+          </div>
+          <div class="checkbox m-b-md m-t-none">
+            <label class="i-checks">
+              <input type="checkbox" ng-model="agree" required><i></i> Agree the <a href>terms and policy</a>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="signup()" ng-disabled='form.$invalid'>Sign up</button>
+          <div class="line line-dashed"></div>
+          <p class="text-center"><small>Already have an account?</small></p>
+          <a ui-sref="login" class="btn btn-lg btn-default btn-block">Sign in</a>
+        </form>
+      </div>      
+    </div>   

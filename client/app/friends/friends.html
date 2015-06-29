@@ -1,0 +1,36 @@
+<!-- Datatables Header -->
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Friends</h1>
+  <small class="text-muted">Manage Friends</small>
+</div>
+<div class="wrapper-md" ng-init="initFriends()">
+<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>  
+  <div class="panel no-border">            
+    <ul class="list-group list-group-lg m-b-none">
+      <li class="list-group-item" ng-repeat="friendObj in friends">
+        <a href class="thumb-sm m-r">
+          <img src="assets/img/a1.jpg" class="r r-2x">
+        </a>{{friendObj.friend.name}}
+        <div class="pull-right">
+          <button class="btn btn-sm btn-success" ng-controller="MessageCtrl" ng-click="open(friendObj.friend)">Message</button> 
+          <button class="btn btn-sm btn-danger" ng-click="removeFriend(friendObj)">Remove
+          </button>
+        </div>
+      </li>
+    </ul>
+    
+    <div class="panel-footer">
+      <!-- <span class="pull-right badge badge-bg m-t-xs">32</span> -->
+      <a ui-sref="^.create" class="btn btn-sm btn-primary">
+      <i class="fa fa-plus space-6"></i> Add Friends</a>
+      <!-- <button class="btn btn-primary btn-addon btn-sm" ng-click="initCreateFriend()"><i class="fa fa-plus"></i>Add Friends</button> -->
+    </div>
+  </div>
+</div>
+<!-- END Datatables Content -->
+<script type="text/ng-template" id="modalContent">
+    <div>Are you sure</div>
+</script>
+<script type="text/ng-template" id="modalMessageDetails.html">
+    <div ng-include="'app/friends/message.html'"></div>
+</script>

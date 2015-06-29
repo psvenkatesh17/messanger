@@ -1,0 +1,87 @@
+<!-- Datatables Header -->
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Search</h1>
+  <small class="text-muted">Manage Booking Search</small>
+</div>
+<ul class="breadcrumb bg-white b-a">
+	<li><i class="glyphicon glyphicon-search icon text-info-dker"></i> Search</li>
+	<li>Booking Search</li>
+</ul>
+<!-- END Datatables Header -->
+
+
+<!-- Datatables Content -->
+<div class="wrapper-md" ng-init="initBookings()">		
+	<div class="panel panel-default">
+		<div class="panel-heading font-bold">Advanced Booking Search</div>
+		<div class="panel-body">
+			<form action="#" ng-submit="searchBookings()" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
+				<div class="row m-b-sm">						
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Date Range</label>
+							<div class="col-sm-9">
+									<date-range-picker style="cursor: default" ng-model="dateRange" class="daterange pull-right wrapper-xs btn-info" ranges="ranges">
+									<i class="fa fa-calendar fa-lg"></i>
+									<span>{{dateRange.startDate | amDateFormat: 'MMM D, YYYY'}} - {{dateRange.endDate | amDateFormat: 'MMM D, YYYY'}}</span>
+									<b class="caret"></b>
+									</date-range-picker>
+							</div>
+						</div>						
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="booked_for">Employee
+							</label>
+							<div class="col-sm-9">
+							<select ng-init="initAllEmployees()" ng-model="params.booked_for"
+								id="booked_for" name="booked_for" class="form-control" size="1" ng-options="employee._id as (employee.name) for employee in allEmployees">
+								<option value="">Select Employee</option>
+							</select>
+							</div>
+						</div>												
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="booking_status">Booking Status</label>	
+							<div class="col-sm-9">									
+							<select ng-model="params.booking_status" id="booking_status" name="booking_status" class="form-control" size="1">
+								<option value="">All Status</option>
+								<option value="REQUEST">REQUEST</option>	
+								<option value="CANCELLED">CANCELLED</option>				
+								<option value="CONFIRMED">CONFIRMED</option>
+							</select>
+							</div>
+						</div>						
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Service Provider</label>
+							<div class="col-sm-9">
+								<select ng-init="initAllServiceProvider()" ng-model="params.service_provider" id="service_provider" name="service_provider" class="form-control" size="1" ng-options="service_provider._id as (service_provider.business_name) for service_provider in allServiceProviders">
+								<option value="">Select Service Provider</option>
+							</select>				
+							</div>
+						</div>
+					</div>						
+				</div>
+				<footer class="panel-footer text-right bg-light lter">
+	              <button type="submit" class="btn btn-success"> <i class="fa fa-search"></i> Search</button>
+	              <button type="reset" class="btn btn-warning" ng-click="resetBookings()">
+	                <i class="fa fa-repeat"></i> Reset</button>
+	            </footer>					
+			</form>
+		</div>
+	</div>	
+	<br/>	
+	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+	<div class="panel panel-default">
+	   	<div class="panel-heading">
+	      Bookings Search Result: {{bookings.total}}
+	      	<div class="pull-right" ng-show="{{access}}">					
+			<a ng-click="bookingMultiDelete()" class="btn btn-xs btn-danger" id="style-condensed"><i class="fa fa-remove"></i> Delete</a>
+			</div>
+	    </div>
+	    <div class="table-responsive">
+	      <div ng-grid="gridOptions" style="min-height:420px"></div>
+		</div>
+	</div>	
+</div>
+<!-- END Datatables Content -->

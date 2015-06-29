@@ -1,0 +1,69 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm">
+	<!-- main -->
+	<div class="col" ng-init="initDashboard()">
+		<!-- main header -->
+		<div class="bg-light lter b-b wrapper-md">
+			<div class="row">
+				<div class="col-sm-6 col-xs-12">
+					<h1 class="m-n font-thin h3 text-black">Dashboard</h1>
+					<small class="text-muted">Instagram Application</small>
+				</div>
+			</div>
+		</div>
+		<!-- / main header -->
+		<div class="wrapper-md">
+			<div class="row m-b-sm">
+				<div class="col-md-12">
+					<div class="row row-sm text-center">						
+						<div class="col-xs-4">
+							<div class="panel padder-v bg-info item">
+								<div class="h1 text-white font-thin h1">{{msgStats.total}}</div>
+								<span class="text-lg">Total Messages</span>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="panel padder-v bg-info item">
+								<div class="h1 text-white font-thin h1">{{read}}</div>
+								<span class="text-lg">Read Messages</span>				
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="panel padder-v bg-info item">
+							<div class="h1 text-white font-thin h1">{{unread}}</div>
+							<span class="text-lg">Unread Messages</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- stats -->
+			<!-- <div class="row">				
+					<div class="panel wrapper" ng-controller="FlotChartDemoCtrl">
+						<label class="i-switch bg-warning pull-right" ng-init="showSpline=true">
+							<input type="checkbox" ng-model="showSpline">
+							<i></i>
+						</label>
+						<h4 class="font-thin m-t-none m-b text-muted">Latest Campaign</h4>
+						<div ui-jq="plot" ui-refresh="showSpline" ui-options="
+							[
+							{ data: {{d0_1}}, label:'Employee Request', points: { show: true, radius: 1}, splines: { show: showSpline, tension: 0.4, lineWidth: 1, fill: 0.8 } },
+							{ data: {{d0_2}}, label:'Pending Request', points: { show: true, radius: 1}, splines: { show: showSpline, tension: 0.4, lineWidth: 1, fill: 0.8 } }
+							],
+							{
+							colors: ['{{app.color.info}}', '{{app.color.primary}}'],
+							series: { shadowSize: 3 },
+							xaxis:{ font: { color: '#a1a7ac' } },
+							yaxis:{ font: { color: '#a1a7ac' }, max:20 },
+							grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+							tooltip: true,
+							tooltipOpts: { content: '%x is %y',  defaultTheme: false, shifts: { x: 10, y: -25 } }
+							}
+							" style="height:246px" >
+						</div>
+					</div>				
+			</div> -->
+			<!-- / stats -->			
+		</div>
+	</div>
+	<!-- / main -->
+</div>

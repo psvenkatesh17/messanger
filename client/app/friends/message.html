@@ -1,0 +1,31 @@
+<div class="modal-body wrapper-lg" ng-init="initMessageDetails()">
+  <div class="row">
+    <div class="col-sm-12 b-r">
+    	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
+        {{alert.type}} {{alert.msg}}</alert>
+      	<h3 class="m-t-none m-b font-thin">Send Message To Friends</h3>
+			<form name="bookingForm" action="#" ng-submit = "sendMessage()" method="post" enctype="multipart/form-data" class="form-horizontal form-validation" onsubmit="return false;">	
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="example-email-input">To
+					</label>
+					<div class="col-sm-10">											
+							<input type="text" id="driver-name" ng-model="message.mobileNo" name="driver-name" class="form-control" placeholder="Name">						
+					</div>	
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="example-email-input">Message
+					</label>
+					<div class="col-sm-10">											
+						<textarea row="7" cols="30" placeholder="Message" ng-model="message.msg"></textarea> 
+					</div>
+				</div>
+				<div class="text-right lter">
+					<button type="submit" class="btn btn-success" ng-disabled="bookingForm.$invalid">
+		               <i class="fa fa-edit"></i> Send</button>
+		            <button type="button" class="btn btn-warning" ng-click="cancel()">
+		               <i class="fa fa-repeat"></i> Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

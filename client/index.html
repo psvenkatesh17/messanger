@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="instagramApp">
+<head>
+  <meta charset="utf-8" />
+  <title>Instagram App</title>
+  <meta name="description" content="Angularjs, Html5, Music, Landing, 4 in 1 ui kits package" />
+  <meta name="keywords" content="AngularJS, angular, bootstrap, admin, dashboard, panel, app, charts, components,flat, responsive, layout, kit, ui, route, web, app, widgets" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  
+  <base  href="/" />
+
+  <!-- build:css(client) app/vendor.css -->
+  <!-- bower: css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+  <link rel="stylesheet" href="bower_components/angularjs-toaster/toaster.css" />
+  <link rel="stylesheet" href="bower_components/ng-grid/ng-grid.css" />
+  <link rel="stylesheet" href="bower_components/angular-dialog-service/dialogs.min.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+
+  <!-- build:css({.tmp,client}) app/app.css -->
+  <link rel="stylesheet" href="app/app.css">
+  <!-- injector:css -->
+  <link rel="stylesheet" href="app/css/animate.css">
+  <link rel="stylesheet" href="app/css/font.css">
+  <link rel="stylesheet" href="app/css/simple-line-icons.css">
+  <link rel="stylesheet" href="components/jquery/chosen/chosen.css">
+  <link rel="stylesheet" href="components/jquery/select2/select2-bootstrap.css">
+  <link rel="stylesheet" href="components/jquery/select2/select2.css">
+  <!-- endinjector -->
+  <!-- endbuild -->
+
+</head>
+<body ng-controller="AppCtrl">
+  <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view></div>
+
+
+
+  <!-- build:js(client) app/vendor.js -->
+  <!-- bower: js -->
+  <script src="bower_components/modernizr/modernizr.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-translate/angular-translate.js"></script>
+  <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+  <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+  <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/ngstorage/ngStorage.js"></script>
+  <script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+  <script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
+  <script src="bower_components/angular-ui-select/dist/select.js"></script>
+  <script src="bower_components/angularjs-toaster/toaster.js"></script>
+  <script src="bower_components/ng-grid/build/ng-grid.js"></script>
+  <script src="bower_components/restangular/src/restangular.js"></script>
+  <script src="bower_components/angular-dialog-service/dialogs.min.js"></script>
+  <script src="bower_components/angular-dialog-service/dialogs-default-translations.min.js"></script>
+  <script src="bower_components/angular-flot/angular-flot.js"></script>
+  <script src="bower_components/angular-moment/angular-moment.js"></script>
+  <script src="bower_components/angular-ui-bootstrap-datetimepicker/datetimepicker.js"></script>
+  <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  
+  <!-- build:js({.tmp,client}) app/app.js -->
+  <script src="app/app.js"></script>
+  <!-- injector:js -->
+  <script src="app/account/account.js"></script>
+  <script src="app/account/login/login.controller.js"></script>
+  <script src="app/account/settings/settings.controller.js"></script>
+  <script src="app/account/signup/signup.controller.js"></script>
+  <script src="app/config.js"></script>
+  <script src="app/config.lazyload.js"></script>
+  <script src="app/config.router.js"></script>
+  <script src="app/dashboard/dashboard.controller.js"></script>
+  <script src="app/dashboard/dashboard.js"></script>
+  <script src="app/friends/friends.controller.js"></script>
+  <script src="app/friends/friends.js"></script>
+  <script src="app/friends/message.controller.js"></script>
+  <script src="app/groups/groups.controller.js"></script>
+  <script src="app/groups/groups.js"></script>
+  <script src="app/layout/layout.controller.js"></script>
+  <script src="app/main.js"></script>
+  <script src="app/messages/messages.controller.js"></script>
+  <script src="app/messages/messages.js"></script>
+  <script src="app/reports/reports.controller.js"></script>
+  <script src="app/reports/reports.js"></script>
+  <script src="app/search/search.controller.js"></script>
+  <script src="app/search/search.js"></script>
+  <script src="components/auth/auth.service.js"></script>
+  <script src="components/directives/daterangepicker-directive/ng-bs-daterangepicker.js"></script>
+  <script src="components/directives/setnganimate.js"></script>
+  <script src="components/directives/ui-butterbar.js"></script>
+  <script src="components/directives/ui-focus.js"></script>
+  <script src="components/directives/ui-jq.js"></script>
+  <script src="components/directives/ui-module.js"></script>
+  <script src="components/directives/ui-nav.js"></script>
+  <script src="components/directives/ui-scroll.js"></script>
+  <script src="components/directives/ui-shift.js"></script>
+  <script src="components/directives/ui-toggleclass.js"></script>
+  <script src="components/filters/fromNow.js"></script>
+  <script src="components/jquery/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+  <script src="components/jquery/charts/flot/jquery.flot.min.js"></script>
+  <script src="components/jquery/charts/flot/jquery.flot.orderBars.js"></script>
+  <script src="components/jquery/charts/flot/jquery.flot.pie.min.js"></script>
+  <script src="components/jquery/charts/flot/jquery.flot.resize.js"></script>
+  <script src="components/jquery/charts/flot/jquery.flot.spline.js"></script>
+  <script src="components/jquery/charts/flot/jquery.flot.tooltip.min.js"></script>
+  <script src="components/jquery/charts/sparkline/jquery.sparkline.min.js"></script>
+  <script src="components/jquery/chosen/chosen.jquery.min.js"></script>
+  <script src="components/jquery/file/bootstrap-filestyle.min.js"></script>
+  <script src="components/jquery/select2/select2.min.js"></script>
+  <script src="components/jquery/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="components/services/ui-load.js"></script>
+  <!-- endinjector -->
+  <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+<!-- Forms General Header -->
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3 text-black">Friends</h1>
+    <small class="text-muted">Create New Friends</small>
+</div>
+<ul class="breadcrumb bg-white b-a">
+	<li><a ui-sref="^.list"><i class="glyphicon glyphicon-user icon text-info-dker"></i> Friends</a></li>
+	<li>Create New Friend</li>
+</ul>
+<!-- END Forms General Header -->
+
+<div class="wrapper-md" ng-init="initCreateFriend()">
+    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+    <form name="userForm" action="#" ng-submit = "addUser(userForm.$valid)" method="post" enctype="multipart/form-data" class="form-horizontal form-validation" onsubmit="return false;">	
+    	<div class="panel panel-default">
+            <div class="panel-heading font-bold">
+                Create New Friends
+            </div>
+            <div class="panel-body">
+            	<label>Email</label> <input type="email" ng-model="email"></input>
+                <button type="submit" class="btn btn-success" ng-click="searchFriend()"> <i class="fa fa-save"></i> Search</button>
+            </div>
+        </div>    			
+	</form>
+    
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <!-- Users: {{users.total}} -->
+    </div>
+    <div class="table-responsive">
+      <div ng-grid="gridOptions" style="min-height:420px"></div>
+    </div>
+</div>

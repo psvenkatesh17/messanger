@@ -1,0 +1,35 @@
+<!-- Datatables Header -->
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Messages</h1>
+  <small class="text-muted">Manage Messages</small>
+</div>
+<!-- END Datatables Header -->
+
+<!-- Datatables Content -->
+<div class="wrapper-md" ng-init="initMessages()">
+  	
+<div class="list-group list-group-lg list-group-sp">
+  <a herf class="list-group-item clearfix" ng-repeat="message in messages">
+    <span class="pull-left thumb-sm avatar m-r">
+      <img src="assets/img/a4.jpg" alt="...">
+      <i class="on b-white right"></i>
+    </span>
+    <span class="clear">
+      <span ng-bind="message.sender.name"></span>
+      <button class="btn btn-sm btn-info pull-right" ng-bind="message.status"></button>
+      <small class="text-muted clear text-ellipsis" ng-bind="message.message"></small>
+    </span>
+  </a>
+</div>
+  
+  
+</div>
+
+
+          
+<!-- END Datatables Content -->
+
+
+<script type="text/ng-template" id="modalContent">
+    <div>Are you sure</div>
+</script>

@@ -1,0 +1,52 @@
+<!-- Datatables Header -->
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Groups</h1>
+  <small class="text-muted">Manage Groups</small>
+</div>
+<!-- END Datatables Header -->
+
+<!-- Datatables Content -->
+<div class="wrapper-md" ng-init="initGroups()">
+  	<div class="row m-b-sm">
+    	<div class="col-md-3">
+	    	<a ui-sref="^.create" class="btn btn-sm btn-primary"
+					><i class="fa fa-plus space-6"></i> Create</a>
+			 <span /> 
+			 <a ng-click="multiDelete()" class="btn btn-sm btn-danger" 
+			 	><i class="fa fa-remove"></i> Delete</a>
+	    </div>
+	    <div class="col-md-9 pull-right">
+			<form action="#" ng-submit="searchGroup()" onsubmit="return false;">	
+				<div class="col-md-5">
+					<input ng-model="params.name" type="text" id="groupName" class="form-control" placeholder="Group Name" />
+				</div>
+
+				<div class="col-md-4">
+					<div class="form-group form-actions">							
+							<button type="submit" class="btn btn-sm btn-success">
+								<i class="fa fa-search"></i> Search
+							</button>
+							<button type="reset" class="btn btn-sm btn-warning" ng-click="resetGroup()">
+								<i class="fa fa-repeat"></i> Reset
+							</button>							
+					</div>
+				</div>
+			</form>				
+		</div>
+	</div>
+<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Groups: {{groups.total}}
+    </div>
+    <div class="table-responsive">
+      <div ng-grid="gridOptions" style="min-height:420px"></div>
+    </div>
+  </div>
+</div>
+<!-- END Datatables Content -->
+
+
+<script type="text/ng-template" id="modalContent">
+    <div>Are you sure</div>
+</script>

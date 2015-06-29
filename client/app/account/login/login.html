@@ -1,0 +1,35 @@
+<style type="text/css">
+.bgimg {
+    background-image: url('../../../assets/img/bg-img.jpg');    
+}
+</style>
+<div class="bgimg">
+<div class="container w-xxl w-auto-xs" ng-controller="LoginCtrl" style="background-color:#001122">
+  <a href class="navbar-brand block m-t" style="color:#ffffff"><h2>{{app.name}}</h2></a>
+  <div class="m-b-lg" ng-init="initLogin()">
+    <div class="wrapper text-center">
+      <strong>Sign in to get in touch</strong>
+    </div>
+    <form name="form" ng-submit="signIn()" class="form-validation">
+      <div class="text-danger wrapper text-center" ng-show="authError">
+          {{authError}}
+      </div>      
+      <div class="list-group list-group-sm">
+        <div class="list-group-item">
+          <input type="text" placeholder="Email" class="form-control no-border" ng-model="user.username" required>
+        </div>
+        <div class="list-group-item">
+           <input type="password" placeholder="Password" class="form-control no-border" ng-model="user.password" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-lg btn-success btn-block" ng-disabled='form.$invalid'>Log in</button>
+      <br/>
+       <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+      <div class="text-center m-t m-b"><a href>Forgot password?</a></div>
+      <div class="line line-dashed"></div>
+      <p class="text-center"><small>Do not have an account?</small></p>
+      <a ui-sref="signup" class="btn btn-lg btn-primary btn-block">Create an account</a>
+    </form>
+  </div> 
+</div>
+</div>
